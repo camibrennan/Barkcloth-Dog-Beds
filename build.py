@@ -22,3 +22,28 @@ def main():
     open('./docs/purchase.html', 'w+').write(combined_html)
 
 main()
+
+pages = [
+ 
+{
+    "filename": "content/index.html",
+    "output": "docs/index.html",
+    "title": "Index",
+},
+{
+    "filename": "content/purchase.html",
+    "output": "docs/purchase.html",
+    "title": "Purchase",
+},
+{
+    "filename": "content/blog.html",
+    "output": "docs/blog.html",
+    "title": "Blog",
+}
+]
+
+for page in pages:
+    print(page)
+
+page_title = page['title']
+print(page_title)
