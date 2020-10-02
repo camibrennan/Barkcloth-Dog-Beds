@@ -2,18 +2,18 @@
 pages = [
  
 {
-    "filename": "./content/index.html",
-    "output": "./docs/index.html",
+    "filename": "content/index.html",
+    "output": "docs/index.html",
     "title": "Index",
 },
 {
-    "filename": "./content/purchase.html",
-    "output": "./docs/purchase.html",
+    "filename": "content/purchase.html",
+    "output": "docs/purchase.html",
     "title": "Purchase",
 },
 {
-    "filename": "./content/blog.html",
-    "output": "./docs/blog.html",
+    "filename": "content/blog.html",
+    "output": "docs/blog.html",
     "title": "Blog",
 }
 ]
@@ -24,16 +24,13 @@ def main():
         page_title = page['title']
         page_filename = page['filename']
         page_output = page['output']
-     
-    top_html = open('./templates/top.html').read()
-    bottom_html = open('./templates/bottom.html').read()
-    index_html = open(page_filename).read()
-    combined_html = top_html + index_html + bottom_html
-    print(combined_html)
-    open(page_output, 'w+').write(combined_html)
-
+        template = open("templates/base.html").read()
+        index_content = open(page_filename).read()
+        finished_index_page = template.replace("{{content}}", index_content)
+        open(page_output, "w+").write(finished_index_page)
+        
+        
 main()
 
 
- 
 
