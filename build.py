@@ -18,18 +18,20 @@ pages = [
 }
 ]
 
-
+def read_template():
+    template = open("templates/base.html").read()
+    return template
+    
 def main():
     for page in pages:
         page_title = page['title']
         page_filename = page['filename']
         page_output = page['output']
-        template = open("templates/base.html").read()
+        template = read_template()
         index_content = open(page_filename).read()
         finished_index_page = template.replace("{{content}}", index_content)
-        open(page_output, "w+").write(finished_index_page)
-        
-        
+        open(page_output, "w+").write(finished_index_page) 
+                        
 main()
 
 
