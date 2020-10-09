@@ -4,7 +4,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Barkcloth Dog Beds</title>
+  <title>
+    {% for page in pages %}
+    <a href="{{page.output}">{{ page.title}}</a>
+    {% endfor %}
+
+  </title>
   <meta content="custom made pet beds!" name="description">
   <meta content="pets,dogs,dog,bed" name="keywords">
 
